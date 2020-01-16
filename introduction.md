@@ -98,8 +98,7 @@ for i in l2:
 
 输出结果：  
 
-```python
-"""
+```pydocstring
 https://www.bilibili.com/ranking/all/0/0/1
 https://www.bilibili.com/ranking/all/1/0/1
 https://www.bilibili.com/ranking/all/168/0/1
@@ -113,7 +112,6 @@ https://www.bilibili.com/ranking/all/119/0/1
 https://www.bilibili.com/ranking/all/155/0/1
 https://www.bilibili.com/ranking/all/5/0/1
 https://www.bilibili.com/ranking/all/181/0/1
-"""
 ```
 
 ***
@@ -136,11 +134,9 @@ l1=soup.find_all('div',attrs={'class':'num'})
 
 输出结果:
 
-```python
-"""
+```pydocstring
 >>>l1
 [<div class="num">1</div>, <div class="num">2</div>, <div class="num">3</div>, <div class="num">4</div>, <div class="num">5</div>, <div class="num">6</div>,... <div class="num">96</div>, <div class="num">97</div>, <div class="num">98</div>, <div class="num">99</div>, <div class="num">100</div>]
-"""
 ```
 
 现在我们只想要div区块中间的那个数字，试着这样做:
@@ -152,10 +148,8 @@ for i in l1[0]:
 
 输出结果:
 
-```python
-"""
+```pydocstring
 1
-"""
 ```
 
 由此我们得到了第一个div区块中间的文本，要得到第二个的只需将l1[0]中的参数0向上加1即可，要遍及所有的div再外套一个for循环即可  
@@ -175,15 +169,13 @@ for i in range(len(l2)):
 
 输出结果：
 
-```python
-"""
+```pydocstring
 {'name': '当年“血洗”QQ空间的神曲，太羞耻了，满满的都是回忆啊！', 'href': 'https://www.bilibili.com/video/av82724544'}
 {'name': '改编版《牵丝戏》，倒放《西游记》这填词绝了！', 'href': 'https://www.bilibili.com/video/av80888974'}
 {'name': '【官方】周深演唱《姜子牙》片尾曲MV发布啦', 'href': 'https://www.bilibili.com/video/av83422028'}
 ...
 {'name': '在车站弹奏鬼灭之刃主题曲《红莲华》，围观的人会有多少？', 'href': 'https://www.bilibili.com/video/av78996367'}
 {'name': '神级警告！！当指弹开唱，还有弹唱什么事？？《明日拂晓》（Pierre Bensusan《Demain Des Laube》）', 'href': 'https://www.bilibili.com/video/av82983151'}
-"""
 ```
 
 这里的l2[i]["href"]是获取div内href的属性值，用这些的方法你可以获取到div中你想要的如何一种属性的参数值。而dic["name"]=k.replace("'",'\"')则是替代掉标题中可能会出现表示物主代词的 ' （单引号），确保存储数据的字典全使用单引号，原因与数据库存储有关，会在下文PostgreSQL中提到。而如需要字典输出string全用双引号包裹。。。。。。。~~笔者新手忘了怎么处理，百度可以查询到~~  
