@@ -15,7 +15,7 @@ def get_one_page(url):
     response = requests.get(url)
     return response.text
 
-html_doc =get_one_page("https://www.bilibili.com/ranking/all/3/0/3")
+html_doc =get_one_page("https://www.bilibili.com/ranking/all/0/0/3")
 
 soup=BeautifulSoup(html_doc,'lxml')
 i=0
@@ -28,7 +28,6 @@ while True:
             dic["rank"]=m
         for k in soup.find_all('a',attrs={'class':'title'})[i]:
             dic["name"]=k.replace("'",'\"')
-            #l1=re.findall(r'div class="num">(.?)*</div>',soup)
         href = soup.find_all('a',attrs={'class':'title'})[i]
         href1 = href["href"]
         dic["href"]=href1
@@ -37,7 +36,7 @@ while True:
     except:
         for i in d:
             print(i)
-        json_d = json.dumps(d,ensure_ascii=False)
+        json_d = json.dumps(d,ensure_ascii=False)   #输出为json
         break
 input()
 
